@@ -1,0 +1,192 @@
+
+ 
+.navbar {
+    height: 80px;
+    padding: 10px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 4vh;
+    z-index: 10;
+
+    .navbar-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .left,
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .left.none,
+    .toggle {
+        display: none;
+    }
+
+    .center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+            width: auto;
+            height: 60px;
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .right {
+        .icons{
+            display: flex;
+            cursor: pointer;
+            color: #777;
+            gap: 10px;
+            font-size: 14px;
+
+            .cartIcon {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 12px;
+                    color: #fff;
+                    background: var(--main-color);
+                    border-radius: 50%;
+                    top: -8px;
+                    right: -8px;
+                }
+            }
+        }
+    }
+}
+
+// Media for tablet view
+@media only screen and (max-width: 1000px) {
+    .navbar {
+        padding: 10px 30px;
+
+        .navbar-container {
+            .center {
+                img {
+                    height: 40px;
+                }
+            }
+
+            .item {
+                font-size: 14px;
+            }
+
+            .icons {
+                font-size: 12px; 
+
+                .cartIcon {
+                    span {
+                        width: 16px;
+                        height: 16px;
+                        font-size: 10px;
+                        right: -3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {    
+    .navbar {
+        padding: 10px 15px;
+
+        .navbar-container {
+            .left {
+                display: none;
+            }
+
+            .toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+
+                .bar {
+                    height: 2px;
+                    width: 25px;
+                    background: #777;
+                }
+            }
+
+            .left.responsive {
+                width: 75%;
+                height: calc(100vh - 80px - 4vh);
+                padding: 20px 0 0 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                position: absolute;
+                background-color: #f9f9f9;
+                top: 70px;
+                left: -15px;
+                z-index: 100;
+
+                .item {
+                    width: 100%;
+                    font-size: 18px;
+                    border-bottom: 1px solid rgb(119, 119, 119, 0.2);
+                }
+            }
+
+            .right {
+                .item.none {
+                    display: none;
+                }
+
+                .icons {
+                    .none {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar {
+        height: 60px;
+        padding: 10px 5px;
+        top: 3vh;
+
+        .navbar-container {
+            .left.responsive {
+                height: calc(100vh - 60px - 3vh);
+                top: 50px;
+
+                .item {
+                    font-size: 14px;
+                }
+            }
+
+            .center {
+                img {
+                    height: 35px;
+                }
+            }
+        }
+    }
+}

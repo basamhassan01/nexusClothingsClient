@@ -1,0 +1,138 @@
+
+
+.brands {
+    margin: 80px 100px;
+
+    .brands-container {
+        width: 100%;
+        height: auto;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-family: var(--simple-text);
+                color: var(--main-color);
+                font-size: 22px;
+            }
+
+            p {
+                margin-top: 10px;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+
+        .images {
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            img {
+                width: 12.5%;
+                height: 100px;
+                object-fit: contain;
+            }
+            
+            img.resize {
+                height: 50px;
+            }
+
+            img.resizes {
+                height: 70px;
+            }
+        }
+    }
+}
+
+// Media for tablet view
+@media only screen and (max-width: 1300px) {
+    .brands {
+        margin: 70px 50px;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .brands {
+        margin: 60px 30px;
+
+        .brands-container {
+            .images {
+                img {
+                    width: 20%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .brands {
+        margin: 60px 30px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .brands {
+        margin: 50px 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .brands {
+        margin: 40px 15px;
+
+        .brands-container {
+           .content {
+                h1 {
+                    font-size: 18px;
+                }
+
+                p {
+                    margin-top: 5px;
+                    font-size: 12px;
+                }
+            }
+
+            .images {
+                img {
+                    width: 25%;
+                    height: 40px;
+
+                    img.resize {
+                        height: 20px;
+                    }
+        
+                    img.resizes {
+                        height: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .brands {
+        margin: 30px 5px;
+
+        .brands-container {
+            .images {
+                img {
+                    img.resize {
+                        height: 15px;
+                    }
+        
+                    img.resizes {
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
