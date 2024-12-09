@@ -74,7 +74,7 @@ function Navbar() {
 
 
         <div className="center">
-          <Link className='link' to="/"><img src="/img/Nexus_logo_Navbar.png" alt="" /></Link>
+          <Link className='link' to="/"><img src="/img/Nexus_Logo_Navbar.png" alt="" /></Link>
         </div>
         <div className="right">
           <div className="item none">
