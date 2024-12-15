@@ -21,7 +21,7 @@
         button {
             position: absolute;
             margin: auto;
-            padding: 5px 10px;
+            padding: 3px 3px;
             min-width: 100px;
             width: fit-content;
             height: fit-content;
@@ -73,14 +73,14 @@
                 button {
                     position: absolute;
                     margin: auto;
-                    padding: 5px 10px;
+                    padding: 3px 3px;
                     min-width: 100px;
                     width: fit-content;
                     height: fit-content;
                     color: black;
                     background-color: #fff;
                     text-transform: uppercase;
-                    border: 1px solid black;
+                    border: none;
                     top: 0;
                     left: 0;
                     right: 0;

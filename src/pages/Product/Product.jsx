@@ -1,19 +1,20 @@
 import React from 'react'
-import useFetch from '../../Hooks/useFetch';
+import { useParams } from 'react-router-dom';
+import productsItems from '../../data/productsItems';
 import SingleCard from '../../components/SingleCard/SingleCard';
 import "./Product.scss"
 
 function Product() {
 
-  const {data, loading, error} = useFetch(`/products/?populate=*`);
+  const { id } = useParams(); 
 
-  console.log(data)
+  const item = productsItems.find(product => product.id === parseInt(id));
+
+  if (!item) return <div>Product not found!</div>;
 
   return (
     <div className='product'>
-      {error ? "Something went wrong!" : loading ? "Loading" : data?.map(item => (
-        <SingleCard item={item} key={item.id} />
-      ))}
+      <SingleCard itemId={item.id} />
     </div>
   )
 }

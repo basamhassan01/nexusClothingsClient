@@ -54,7 +54,7 @@ function Slider() {
         <div className="slider-container tablet" style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
         <div className="slider-container-caption">
             <div className="hero-caption">
-              <h2>Discover Your Inner Expression</h2>
+              <h2>Express Your Inner Self</h2>
               <p>Explore our brand new & unworm items Cultivate Your One-of-a-Kind Fashion Sense. We provide clothes more that sticthed fabric.</p>
               <Link to="/products/1" className="Link"><button>Shop Now</button></Link>
             </div>

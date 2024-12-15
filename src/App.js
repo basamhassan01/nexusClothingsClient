@@ -6,16 +6,16 @@ import {
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
-import About from "./pages/About/About";
-import Contact from "./pages/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Threshold from "./components/Threshold/Threshold";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import "./app.scss"
 
 const Layout = () => {
   return (
     <div className="app">
+      <ScrollToTop />
       <Threshold />
       <Navbar />
       <Outlet />
@@ -43,11 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/about",
-        element:<About />,
+        element:<Home />,
       },
       {
         path:"/contact",
-        element:<Contact />,
+        element:<Home />,
       },
     ],
   },

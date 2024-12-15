@@ -1,11 +1,11 @@
 import React from 'react'
 import Card from '../../components/Card/Card'
-import useFetch from '../../Hooks/useFetch'
+import productsItems from '../../data/productsItems';
 import "./FeaturedProducts.scss"
 
 function FeaturedProducts({type, content}) {
 
-    const {data, loading, error} = useFetch(`/products?populate=*&[filters][type][$eq]=${type}`);
+    const filteredItems = productsItems.filter(item => item.type === type);
     
     return (
     <div className='featured-products'>
@@ -14,8 +14,8 @@ function FeaturedProducts({type, content}) {
             <p>{content}</p>
         </div>
         <div className="bottom">
-            {error ? "Something went wrong!" : loading ? "Loading" : data?.map(item => (
-                <Card item={item} key={item.id} />
+            {filteredItems.length === 0 ? "No products found!" : filteredItems.map(item => (
+                <Card itemId={item.id} Key={item.id} />
             ))}
         </div>                                    
     </div>

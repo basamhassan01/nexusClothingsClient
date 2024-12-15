@@ -31,16 +31,16 @@ function Navbar() {
       <div className="navbar-container">
         <div className="left">
           <div className="item">
-            <Link className='link' to="/products/1" onClick={closeMenu}>Featured</Link>
+            <Link className='link' to="/products/featured" onClick={closeMenu}>Featured</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/products/2">Women</Link>
+            <Link className='link' to="/products/women">Women</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/products/3">Men</Link>
+            <Link className='link' to="/products/men">Men</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/products/4">Kids</Link>
+            <Link className='link' to="/products/kids">Kids</Link>
           </div>
         </div>
 
@@ -53,22 +53,22 @@ function Navbar() {
         </div>
         <div className={`left none ${isOpen ? 'responsive' : ''}`}>
           <div className="item">
-            <Link className='link' to="/products/1" onClick={closeMenu}>Featured</Link>
+            <Link className='link' to="/products/featured" onClick={closeMenu}>Featured</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/products/2" onClick={closeMenu}>Women</Link>
+            <Link className='link' to="/products/women" onClick={closeMenu}>Women</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/products/3" onClick={closeMenu}>Men</Link>
+            <Link className='link' to="/products/men" onClick={closeMenu}>Men</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/products/4" onClick={closeMenu}>Kids</Link>
+            <Link className='link' to="/products/kids" onClick={closeMenu}>Kids</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/about" onClick={closeMenu}>About</Link>
+            <Link className='link' to="/" onClick={closeMenu}>About</Link>
           </div>
           <div className="item">
-            <Link className='link' to="/contact" onClick={closeMenu}>Contact</Link>
+            <Link className='link' to="/" onClick={closeMenu}>Contact</Link>
           </div>
         </div>
 
@@ -78,10 +78,10 @@ function Navbar() {
         </div>
         <div className="right">
           <div className="item none">
-            <Link className='link' to="/about">About</Link>
+            <Link className='link' to="/">About</Link>
           </div>
           <div className="item none">
-            <Link className='link' to="/contact">Contact</Link>
+            <Link className='link' to="/">Contact</Link>
           </div>
           <div className="icons">
             <SearchIcon />
