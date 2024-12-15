@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {Link} from "react-router-dom";
+import React, { useState, useEffect, useRef } from 'react'
+import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -12,8 +12,11 @@ function Navbar() {
 
   // Toggle Function
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const products = useSelector((state) => state.cart?.products);
 
+  const navbarRef = useRef(null); 
+  const cartRef = useRef(null); 
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -23,11 +26,30 @@ function Navbar() {
     setIsOpen(false);
   }
 
-  // Cart Fuction
-  const [open, setOpen] = useState(false);
+  const closeCart = () => {
+    setOpen(false); 
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        closeMenu();
+      }
+
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        closeCart();
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="navbar">
+    <div className="navbar" ref={navbarRef}>
       <div className="navbar-container">
         <div className="left">
           <div className="item">
@@ -87,7 +109,7 @@ function Navbar() {
             <SearchIcon />
             <PersonOutlineIcon className='none'/>
             <FavoriteBorderIcon className='none'/>
-            <div className="cartIcon">
+            <div className="cartIcon" ref={cartRef}>
               <ShoppingCartOutlinedIcon onClick={() => setOpen(!open)} />
               <span>{products.length}</span>
             </div>
